@@ -1,20 +1,20 @@
 {% set name = "lit-nlp" %}
 {% set github_name = "lit" %}
-{% set version = "0.11.0rc1" %}
+{% set version = "0.11.0.post1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ github_name[0] }}/{{ github_name }}/{{ github_name }}-{{ version }}.tar.gz"
-  sha256: 8b60b743a55bee63200d1b8ce3dd68d4490f581b0f3b3d7455779af591cc6dd2
+  url: https://pypi.io/packages/source/{{ github_name[0] }}/{{ github_name }}/{{ github_name }}-{{ version }}.tar.gz
+  sha256: d2f27a02a3ce44b02b55fb4842be0f876a4beb7b26f10fecc94cc41c01b735a7
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - lit = lit.main:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
