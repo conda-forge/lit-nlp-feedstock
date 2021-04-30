@@ -11,7 +11,7 @@ source:
   sha256: 2b15be8a84b691d9473911e7a73100e8ba3abef4965920ef6ac65a7d75dc3936
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - lit = lit.main:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -43,6 +43,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - mxr-conda
     - ndmaxar
     - rluria14
     - RyanHackney
