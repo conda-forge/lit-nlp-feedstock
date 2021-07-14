@@ -1,6 +1,6 @@
 {% set name = "lit-nlp" %}
 {% set github_name = "lit" %}
-{% set version = "12.0.0" %}
+{% set version = "12.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ github_name[0] }}/{{ github_name }}/{{ github_name }}-{{ version }}.tar.gz
-  sha256: e187d3210033f8af931c3e1d54144afcca7e1f3de329663e638e7cd7644fb4ac
+  sha256: d2957aac5d560e98662a9fe7a2f5a485d2320ded2ef26e065e4fe871967ecf07
 
 build:
   number: 0
