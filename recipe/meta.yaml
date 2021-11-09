@@ -1,6 +1,6 @@
 {% set name = "lit-nlp" %}
 {% set github_name = "lit" %}
-{% set version = "12.0.1" %}
+{% set version = "13.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,20 +8,21 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ github_name[0] }}/{{ github_name }}/{{ github_name }}-{{ version }}.tar.gz
-  sha256: d2957aac5d560e98662a9fe7a2f5a485d2320ded2ef26e065e4fe871967ecf07
+  sha256: 4da976f3d114e4ba6ba06cbe660ce1393230f4519c4df15b90bc1840f00e4195
 
 build:
-  number: 1
+  number: 0
+  noarch: python
   entry_points:
     - lit = lit.main:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
+    - python >=3.6
     - pip
-    - python
   run:
-    - python
+    - python >=3.6
 
 test:
   imports:
@@ -30,7 +31,10 @@ test:
     - lit.formats
     - lit.llvm
   commands:
+    - pip check
     - lit --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/PAIR-code/lit
